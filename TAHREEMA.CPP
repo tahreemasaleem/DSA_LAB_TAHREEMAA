@@ -1,41 +1,40 @@
 #include <iostream>
-#include <vector>
+#include <string>
 using namespace std;
 
-vector<int> findIndices(const int arr[], int size, int key) {
-    vector<int> indices;
+int findPattern(const string& text, const string& pattern) {
+    if (pattern.empty()) return 0;
     
-    for (int i = 0; i < size; i++) {
-        if (arr[i] == key) {
-            indices.push_back(i);
+    int n = text.length();
+    int m = pattern.length();
+    
+    for (int i = 0; i <= n - m; i++) {
+        int j;
+        for (j = 0; j < m; j++) {
+            if (text[i + j] != pattern[j]) {
+                break;
+            }
+        }
+        if (j == m) {
+            return i; 
         }
     }
-    
-    return indices;
+    return -1; 
 }
 
 int main() {
-    // Test case: Multiple occurrences
-    int arr[] = {1, 2, 3, 2, 4, 2, 5};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int key = 2;
+    string text = "Tahreema Saleem BSCS";
+    string pattern = "Tahreema";
     
-    vector<int> result = findIndices(arr, size, key);
+    int result = findPattern(text, pattern);
     
-    cout << "Array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << "\nKey: " << key << endl;
+    cout << "Text: " << text << endl;
+    cout << "Pattern: " << pattern << endl;
     
-    if (result.empty()) {
-        cout << "Key not found in the array." << endl;
+    if (result != -1) {
+        cout << "Pattern found at index: " << result << endl;
     } else {
-        cout << "Key found at indices: ";
-        for (int index : result) {
-            cout << index << " ";
-        }
-        cout << endl;
+        cout << "Pattern not found" << endl;
     }
     
     return 0;

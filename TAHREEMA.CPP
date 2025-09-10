@@ -16,15 +16,15 @@ int findPattern(const string& text, const string& pattern) {
             }
         }
         if (j == m) {
-            return i; 
+            return i;
         }
     }
-    return -1; 
+    return -1;
 }
 
 int main() {
-    string text = "Tahreema Saleem BSCS";
-    string pattern = "Tahreema";
+    string text = "TAHREEMA SALEEM BSCS";
+    string pattern = "SALEEM";
     
     int result = findPattern(text, pattern);
     

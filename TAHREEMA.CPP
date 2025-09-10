@@ -24,7 +24,7 @@ int findPattern(const string& text, const string& pattern) {
 
 int main() {
     string text = "TAHREEMA SALEEM BSCS";
-    string pattern = "SALEEM";
+    string pattern = "HELLO";
     
     int result = findPattern(text, pattern);
     

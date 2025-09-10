@@ -15,8 +15,8 @@ vector<int> findIndices(const int arr[], int size, int key) {
 }
 
 int main() {
-    // Test case: Multiple occurrences
-    int arr[] = {1, 2, 3, 2, 4, 2, 5};
+    // Test case: Key not present
+    int arr[] = {1, 3, 5, 7, 9};
     int size = sizeof(arr) / sizeof(arr[0]);
     int key = 2;
     

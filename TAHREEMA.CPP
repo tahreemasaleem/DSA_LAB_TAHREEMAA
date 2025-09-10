@@ -15,15 +15,18 @@ vector<int> findIndices(const int arr[], int size, int key) {
 }
 
 int main() {
-    // Test case: Empty array
-    int arr[] = {};
-    int size = 0;
-    int key = 5;
+    // Test case: Multiple occurrences
+    int arr[] = {1, 2, 3, 2, 4, 2, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key = 2;
     
     vector<int> result = findIndices(arr, size, key);
     
-    cout << "Array: [EMPTY]" << endl;
-    cout << "Key: " << key << endl;
+    cout << "Array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << "\nKey: " << key << endl;
     
     if (result.empty()) {
         cout << "Key not found in the array." << endl;

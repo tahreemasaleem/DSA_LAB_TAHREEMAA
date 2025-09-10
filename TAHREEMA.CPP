@@ -3,8 +3,7 @@
 using namespace std;
 
 int findPattern(const string& text, const string& pattern) {
-    if (pattern.empty()) return 0;
-    
+    if (pattern.empty()) return 0; 
     int n = text.length();
     int m = pattern.length();
     
@@ -23,16 +22,16 @@ int findPattern(const string& text, const string& pattern) {
 }
 
 int main() {
-    string text = "TAHREEMA SALEEM BSCS";
-    string pattern = "HELLO";
+    string text = "TAHREEMA SALEEM";
+    string pattern = "";
     
     int result = findPattern(text, pattern);
     
     cout << "Text: " << text << endl;
-    cout << "Pattern: " << pattern << endl;
+    cout << "Pattern: [EMPTY]" << endl;
     
     if (result != -1) {
-        cout << "Pattern found at index: " << result << endl;
+        cout << "Empty pattern found at index: " << result << endl;
     } else {
         cout << "Pattern not found" << endl;
     }
